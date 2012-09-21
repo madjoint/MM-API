@@ -1,0 +1,75 @@
+1. workflow
+
+RKR:dev
+git branch master
+...
+git commit
+git push
+
+RGR:deploy:local
+git checkout master
+git pull origin master
+git pull origin prodo
+gitx -> drag prodo to master
+git push origin master
+git push origin prodo
+
+RGR:deploy
+git checkout prodo
+git pull origin prodo
+
+
+
+
+
+
+
+API Workflow
+
+.htaccess 
+	file pove s pomocjo RewriteEngine, da vse requeste ki pridejo na /m/rest.4/* parsa rest.php
+rest.php
+	URI razbije na get/interests/list = {method}/{module}/{proc}
+	nalozi class z imenom m{module}
+	in iz tega classa poklice metode rest_{method}_{proc}
+mCommand.class.php
+	je basic class iz katerega descendajo vsi ostali classi API-ja
+	skrbi za avtentikacijo in za formuliranje JSON responsa
+m{module}.class.php
+	moduli so users, interests, messages in queue
+	v vsakem classu so rest_* metode, ki jih podpira modul navzven
+	lahko so tudi metode, ki nimajo rest_* predpone, tiste niso vidne od zunaj
+	v m{module}.class se handla preverjanje konsistentnosti vhodnih podatkov in ustreznega responsa
+r{module}.class.php
+	r{module} metode se klicejo iz m{module} classov
+	klicem jih direktno brez kreiranja objektov r{module}::method(), ce so vezane na podatke v classu, 
+		torej	instancirane pa z $var->method()
+
+API database
+
+interest:
+	lista interesov, ki vsebuje tudi poleg title se stems, stems_numless,kind predpripravljene podatke za algoritem
+	image vsebuje filename (d41d8cd98f00b204e9800998ecf8427e.88138b4858fe9f5953343534c6ba92f4.jpg) ki se doloci v ca/ca_upload.php:mmupload()
+location:
+	lokacije, ki se updejta s post/users/location in se ne brise ampak se samo dodaja, ko se potrebuje lokacija se
+	vzame vedno zadnja
+
+match:
+	tukaj so shranjeni matchi med parom interesov
+	vsak match je shranjen 2x za vsakega userja posebej
+		to omogoca flag za prebrane matche in to, da en uporabnik zbrise match, drugi pa ga se vedno ima
+	za vsak match je shranjen tudi rank za sortiranje
+message:
+	vsi messagei z njihovimi thread id-ji
+thread:
+	message threadi, ki se ne uporabljajo pri NOBENEM requestu in so tu samo zaradi enostavnosti
+	pri programiranju in se jih je treba ZNEBIT ker povzrocajo ful JOINov.
+
+queue_matches:
+queue_messages:
+	queue za SMS server 
+user:
+	user data
+
+kje se fila katera tabela najlazje ugotovis z grep-om
+	
