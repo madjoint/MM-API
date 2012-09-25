@@ -1,0 +1,22 @@
+<?php
+
+// don't forget to fix .htaccess Rewrite Rule target
+
+ini_set('error_reporting',E_ALL & ~E_NOTICE & ~E_WARNING);
+
+$ca_config->sql_hostname = 'localhost';
+$ca_config->sql_database = 'rest_5';
+$ca_config->sql_username = 'rest_5';
+$ca_config->sql_password = 'mismatch';
+$ca_config->ca_db_type = 'mysql';
+$ca_config->table_prefix = '';
+
+$ca_config->base_dir = '/webroot/api/';
+$ca_config->base_proto = 'https://';
+$ca_config->base_host = 'api.mmatcher.com';
+$ca_config->base_uri = '/';
+$ca_config->base_url = $ca_config->base_proto . $ca_config->base_host . $ca_config->base_uri;
+
+$ca_config->predis = array('database' => '2');
+
+?>
