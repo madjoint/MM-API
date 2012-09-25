@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <countries>
+        <country>
+            <name>Srilanka</name>
+            <provinces>
+                <province> 
+                    <name>Central Province</name>
+                    <cities>
+                        <city>Kandy</city>
+                        <city>Dambulla</city>
+                        <city>Matale</city>
+                        <city>Nuwara Eliya</city>
+                        <city>Gampola</city>
+                        <city>Hatton</city>
+                        <city>Nawalapitiya</city>
+                        <city>Talawakele</city>
+                        <city>Harispattuwa</city>
+                        <city>Kadugannawa</city>
+                        <city>Sigiriya</city>
+                    </cities>
+                </province>
+                <province>
+                    <name>Eastern Province</name>
+                    <cities>
+                        <city>Kattankudy</city>
+                        <city>Kalmunai</city>
+                        <city>Batticaloa</city>
+                        <city>Trincomalee</city>
+                        <city>Ampara</city>
+                        <city>Eravur</city>
+                    </cities>
+                </province>
+                <province>
+                    <name>North Central Province</name>
+                    <cities> 
+                        <city>Anuradhapura</city>
+                    </cities>
+                </province>
+                <province>
+                    <name>North Western Province</name>
+                    <cities>    
+                        <city>Puttalam</city>
+                        <city>Chilaw</city>
+                        <city>Kurunegala</city>
+                        <city>Kuliyapitiya</city>
+                    </cities>
+                </province>
+                <province>
+                    <name>Northern Province</name>
+                    <cities>
+                        <city>Mannar Island</city>
+                        <city>Valvettithurai</city>
+                        <city>Chavakacheri</city>
+                        <city>Point Pedro</city>
+                        <city>Vavuniya</city>
+                        <city>Jaffna</city>
+                        <city>Kilinochchi</city>
+                    </cities>
+                </province>
+                <province>
+                    <name>Sabaragamuwa Province</name>
+                    <cities>        
+                        <city>Ratnapura</city>
+                        <city>Kegalla</city>
+                        <city>Balangoda</city>
+                    </cities>
+                </province>
+                <province>
+                    <name>Southern Province</name>
+                    <cities>        
+                        <city>Matara</city>
+                        <city>Galle</city>
+                        <city>Ambalangoda</city>
+                        <city>Weligama</city>
+                        <city>Tangalle</city>
+                        <city>Hambantota</city>
+                    </cities>
+                </province>
+                <province>
+                    <name>Uva Province</name>
+                    <cities>
+                        <city>Badulla</city>
+                        <city>Monaragala</city>
+                        <city>Bandarawela</city>
+                        <city>Wattegama</city>
+                        <city>Haputale</city>
+                    </cities>
+                </province>
+                <province>
+                    <name>Western Province</name>
+                    <cities>
+                        <city>Mulleriyawa</city>
+                        <city>Kalutara</city>
+                        <city>Homagama</city>
+                        <city>Welisara</city>
+                        <city>Hendala</city>
+                        <city>Kolonnawa</city>
+                        <city>Keselwatta</city>
+                        <city>Kotte</city>
+                        <city>Colombo</city>
+                        <city>Dehiwala-Mount Lavinia</city>
+                        <city>Moratuwa</city>
+                        <city>Negombo</city>
+                        <city>Katunayake</city>
+                        <city>Battaramulla</city>
+                        <city>Dalugama</city>
+                        <city>Maharagama</city>
+                        <city>Kotikawatta</city>
+                        <city>Seethawakapura</city>
+                        <city>Ragama</city>
+                        <city>Kandana</city>
+                        <city>Panadura</city>
+                        <city>Beruwala</city>
+                        <city>Wattala</city>
+                        <city>Ja-Ela</city>
+                        <city>Kelaniya</city>
+                        <city>Peliyagoda</city>
+                        <city>Gampaha</city>
+                        <city>Horana</city>
+                        <city>Minuwangoda</city>
+                    </cities>
+                </province>
+            </provinces>    
+        </country>
+    </countries>
