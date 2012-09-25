@@ -1,0 +1,40 @@
+body {
+  position: relative;
+  width: 80%;
+  padding-right: 15%;
+  margin: 50px auto;
+
+  background: #111;
+  color: #eee;
+
+  font-family: Palatino, Georgia, Times, serif;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.draggable {
+  cursor: move;
+  display: inline;
+  background: #000;
+}
+  .draggable .draggable_data {
+    display: none;
+  }
+
+#dropboxes {
+  position: fixed;
+  top: 50px;
+  right: 0%;
+  text-align: right;
+}
+  #dropboxes div {
+    height: 90px;
+    width: 150px;
+    margin: 20px;
+    padding: 10px;
+    border: 2px solid #fff;
+  }
+    #dropboxes div h3 {
+      margin-top: 0;
+      font: bold 18px/24px "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
+    }
