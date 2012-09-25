@@ -1,0 +1,99 @@
+CONTINUE:
+	algoritem evaluator na podlagi scrapanih interesov
+	tf-idf scorer
+	uredit sledljivost, vsakic, ko se nekej vzeme ali doda v keystore se more pokazt kaksna je razlika
+	scorer za 1 na 1 doda se malo scora za besede ki se ujemajo 1 na 1
+	uredim trade in exchange tudi v iEditorju - ce ni hitov na trade se lahko zamenja kind za sell	
+	javascript client dela precej pocasi nebi bilo slabo naredit da na ukaz en stavek razbije al neki ?
+	LTen TransformerEN rename to something more consistent
+	soundex search
+	lo-idf based on CL v keystore
+	SOCIAL FACTORS: PERSON: online time per day, logins per day, average response time  
+
+DOKUMENTACIJA:
+Razlika med adjectives in lo-idf:
+ low-idf se naredi pred stemanjem
+ adjectives se naredi po stemanju
+
+Before Bali:
+	SREDA: dokumentacija za API in LT, API2Slider, Bounty Hunt
+	CETRTEK: priprava vsega kar rabim na AIR, disk in USB key (Hadoop, Cassandra, Ruby, Git, Tokyo, Python)
+	FREE TIME: Craigslist manipulation and evaluator for Craigslist - droppings & importer za boljse interese kot CL
+
+ALGORITHM CHANGE LOG:
+	0.60170577130529	0.76699029126214	0.3	0.7	0.17	0.02	4.7214510440826
+playing - plai > adjectives
+	0.60073489751888	0.76699029126214	0.3	0.7	0.17	0.02	4.7618410587311
+emergency > adjectives
+	0.60073489751888	0.76699029126214	0.3	0.7	0.17	0.02	4.785896062851
+popravil narobe kind od interesa 104 iz + na -
+	0.61024137001079	0.77669902912621	0.3	0.7	0.17	0.02	4.7792510986328
+spremenil keyworde za iskanje iz stems na stems_numless isce se vedno po stems
+	0.61752292340885	0.79126213592233	0.3	0.7	0.17	0.02	4.6090319156647
+spremenil se iskanje po stems_numless namesto stems
+	0.61752292340885	0.79126213592233	0.3	0.7	0.17	0.02	4.7058110237122
+colour > adjectives
+	0.61995010787486	0.79611650485437	0.3	0.7	0.17	0.02	5.1469190120697
+very, good > adjectives
+	0.61752292340885	0.80097087378641	0.3	0.7	0.17	0.02	4.5720188617706
+i >  low-idf
+	0.62122437971953	0.80097087378641	0.3	0.7	0.17	0.02	4.5772700309753
+dodal oklepaje med punctuation ()[]{} (194)
+	0.62607874865156	0.80582524271845	0.3	0.7	0.17	0.02	7.3837571144104
+204 spremenil iz - v +
+	0.63255124056095	0.81553398058252	0.3	0.7	0.17	0.02	4.6427659988403
+231 spremenil iz _ v -
+	0.63942826321467	0.83009708737864	0.3	0.7	0.17	0.02	5.1024100780487
+town > adjectives
+	0.63942826321467	0.83009708737864	0.3	0.7	0.17	0.02	4.6563007831573
+ALGORITEM: opposite_kind('_') = array('_','-') == DID NOT PASS ker je treba evaluation in iEditor interese tudi spremenit
+	0.63942826321467	0.83009708737864	0.3	0.7	0.17	0.02	4.7590568065643
+	0.63942826321467	0.83009708737864	0.3	0.7	0.17	0.02	4.6838281154633
+update_kind - default kind changed from _ to -
+	0.68344120819849	0.87378640776699	0.3	0.7	0.17	0.02	4.6977488994598
+en_test_number_of_words in en_test_order_of_words namesto da delata na stems, naj delata na stems_numless
+	0.69652103559871	0.88349514563107	0.3	0.7	0.17	0.02	4.5962028503418
+en_test_number_of_soundex_words novi score, ki bi vsaj malo resil plumber/plumbing stem problem
+	0.69652103559871	0.88349514563107	0.3	0.7	0.17	0.02	4.7008559703827
+	0.69830097087379	0.88349514563107	0.2	0.7	0.17	0.02	4.6810381412506
+odstranil en_test_number_of_soundex_words
+	0.68923948220065	0.88349514563107	0.2	0.7	0.17	0.02	4.7903649806976
+ostranil activity interes, ker je res popolnoma zablojen
+	3.4191980361938	0.70625	0.91
+	number_of_words	order_of_words	remove_low_ranks	remove_low_ranks_if_zero	time	quality	happiness
+	0.2	0.7	0.17	0.02	3.4295558929443	0.70625	0.91		
+resen problem plumber/plumbing, trainer/training s popravljenim update_stem
+	0.2	0.7	0.17	0.02	3.5113060474396	0.71958333333333	0.93	
+resen problem z other->oth, per->p pogoj: beseda more bit daljsa od 7
+0.2	0.7	0.17	0.02	3.6671311855316	0.72708333333333	0.935	
+service->servic => adjectives
+0.2	0.7	0.17	0.02	3.4574179649353	0.72708333333333	0.935	
+0.2	0.7	0.17	0.02	3.4473819732666	0.72708333333333	0.935	
+job => adjectives
+0.2	0.7	0.17	0.02	3.4253599643707	0.72645833333333	0.93	
+-job <= adjectives
+0.2	0.7	0.17	0.02	3.4648778438568	0.72708333333333	0.935
+female->femal => adj, will->will => idf, by => idf, few => adj, decent => adj
+order => +
+pro => adj
+additional->addit => adj
+brand => adj
+condition->condit => adj
+0.2	0.7	0.17	0.02	3.4025640487671	0.73208333333333	0.935	
+wooden => adj
+brand => adj
+all => idf
+price => adj
+
+TODO: 
+all => idf
+kind => adjectives (kinder ?)
+emergency => adjectives
+professional => adj
+free => adj
+deliver -> deliv => sell -
+color, year = adjectives
+mogoce UPS, APC ne postemat se pravi postemat samo daljse kot 3 recimo
+something => adj
+collection => adj
+expire_time field v bazi, da bo hitrejsi matching

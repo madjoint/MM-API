@@ -1,0 +1,380 @@
+<definitions name='CGWebService' targetNamespace='urn:lk.dialog.cg.ws' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:ns1='urn:lk.dialog.cg.ws.types' xmlns:ns2='http://messages.ws.cg.dialog.lk/jaws' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='urn:lk.dialog.cg.ws' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <schema targetNamespace='http://messages.ws.cg.dialog.lk/jaws' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:ns1='urn:lk.dialog.cg.ws.types' xmlns:ns2='http://www.w3.org/2001/XMLSchema' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='http://messages.ws.cg.dialog.lk/jaws' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <import namespace='urn:lk.dialog.cg.ws.types'/>
+   <import namespace='http://www.w3.org/2001/XMLSchema'/>
+   <complexType name='ChargeBySpecialDebitRequest'>
+    <complexContent>
+     <extension base='tns:Request'>
+      <sequence>
+       <element name='accountRef' nillable='true' type='string'/>
+       <element name='amount' type='double'/>
+       <element name='billDesc' nillable='true' type='string'/>
+       <element name='reasonCode' nillable='true' type='string'/>
+       <element name='taxable' type='boolean'/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name='ChargeBySpecialDebitResponse'>
+    <complexContent>
+     <extension base='tns:Response'>
+      <sequence/>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name='ChargedToBillRequest'>
+    <complexContent>
+     <extension base='tns:Request'>
+      <sequence>
+       <element name='accountRef' nillable='true' type='string'/>
+       <element name='amount' type='double'/>
+       <element name='reasonCode' nillable='true' type='string'/>
+       <element name='taxable' type='boolean'/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name='ChargedToBillResponse'>
+    <complexContent>
+     <extension base='tns:Response'>
+      <sequence/>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name='CreditCheckRequest'>
+    <complexContent>
+     <extension base='tns:Request'>
+      <sequence/>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name='CreditCheckResponse'>
+    <complexContent>
+     <extension base='tns:Response'>
+      <sequence>
+       <element name='creditlimit' type='double'/>
+       <element name='outStanding' type='double'/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name='PayByCardRequest'>
+    <complexContent>
+     <extension base='tns:Request'>
+      <sequence>
+       <element name='accountRef' nillable='true' type='string'/>
+       <element name='amount' type='double'/>
+       <element name='cardAgent' nillable='true' type='string'/>
+       <element name='cardNo' nillable='true' type='string'/>
+       <element name='cardType' nillable='true' type='string'/>
+       <element name='reasonCode' nillable='true' type='string'/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name='PayByCardResponse'>
+    <complexContent>
+     <extension base='tns:Response'>
+      <sequence>
+       <element name='receiptNo' nillable='true' type='string'/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name='PayByCashRequest'>
+    <complexContent>
+     <extension base='tns:Request'>
+      <sequence>
+       <element name='accountRef' nillable='true' type='string'/>
+       <element name='amount' type='double'/>
+       <element name='reasonCode' nillable='true' type='string'/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name='PayByCashResponse'>
+    <complexContent>
+     <extension base='tns:Response'>
+      <sequence>
+       <element name='receiptNo' nillable='true' type='string'/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name='PayByDirectDebitRequest'>
+    <complexContent>
+     <extension base='tns:Request'>
+      <sequence>
+       <element name='accountRef' nillable='true' type='string'/>
+       <element name='amount' type='double'/>
+       <element name='reasonCode' nillable='true' type='string'/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name='PayByDirectDebitResponse'>
+    <complexContent>
+     <extension base='tns:Response'>
+      <sequence>
+       <element name='receiptNo' nillable='true' type='string'/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name='Request'>
+    <sequence>
+     <element name='appID' nillable='true' type='string'/>
+     <element name='authKey' nillable='true' type='string'/>
+     <element name='domainID' nillable='true' type='string'/>
+     <element name='refAccount' nillable='true' type='string'/>
+     <element name='transactionID' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+   <complexType name='Response'>
+    <sequence>
+     <element name='accountStatus' nillable='true' type='string'/>
+     <element name='accountType' nillable='true' type='string'/>
+     <element name='appId' nillable='true' type='string'/>
+     <element name='dateTime' nillable='true' type='string'/>
+     <element name='domainID' nillable='true' type='string'/>
+     <element name='transResult' nillable='true' type='string'/>
+     <element name='transactionID' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema targetNamespace='urn:lk.dialog.cg.ws.types' xmlns='http://www.w3.org/2001/XMLSchema' xmlns:ns2='http://www.w3.org/2001/XMLSchema' xmlns:ns3='http://messages.ws.cg.dialog.lk/jaws' xmlns:soap11-enc='http://schemas.xmlsoap.org/soap/encoding/' xmlns:tns='urn:lk.dialog.cg.ws.types' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+   <import namespace='http://messages.ws.cg.dialog.lk/jaws'/>
+   <import namespace='http://www.w3.org/2001/XMLSchema'/>
+   <complexType name='chargeBySpecialDebit'>
+    <sequence>
+     <element name='ChargeBySpecialDebitRequest_1' nillable='true' type='ns3:ChargeBySpecialDebitRequest'/>
+    </sequence>
+   </complexType>
+   <complexType name='chargeBySpecialDebitResponse'>
+    <sequence>
+     <element name='result' nillable='true' type='ns3:ChargeBySpecialDebitResponse'/>
+    </sequence>
+   </complexType>
+   <complexType name='chargeToBill'>
+    <sequence>
+     <element name='ChargedToBillRequest_1' nillable='true' type='ns3:ChargedToBillRequest'/>
+    </sequence>
+   </complexType>
+   <complexType name='chargeToBillResponse'>
+    <sequence>
+     <element name='result' nillable='true' type='ns3:ChargedToBillResponse'/>
+    </sequence>
+   </complexType>
+   <complexType name='getSessionKey'>
+    <sequence>
+     <element name='String_1' nillable='true' type='string'/>
+     <element name='arrayOfbyte_2' nillable='true' type='base64Binary'/>
+    </sequence>
+   </complexType>
+   <complexType name='getSessionKeyResponse'>
+    <sequence>
+     <element name='result' nillable='true' type='string'/>
+    </sequence>
+   </complexType>
+   <complexType name='payByCard'>
+    <sequence>
+     <element name='PayByCardRequest_1' nillable='true' type='ns3:PayByCardRequest'/>
+    </sequence>
+   </complexType>
+   <complexType name='payByCardResponse'>
+    <sequence>
+     <element name='result' nillable='true' type='ns3:PayByCardResponse'/>
+    </sequence>
+   </complexType>
+   <complexType name='payByCash'>
+    <sequence>
+     <element name='PayByCashRequest_1' nillable='true' type='ns3:PayByCashRequest'/>
+    </sequence>
+   </complexType>
+   <complexType name='payByCashResponse'>
+    <sequence>
+     <element name='result' nillable='true' type='ns3:PayByCashResponse'/>
+    </sequence>
+   </complexType>
+   <complexType name='payByDirectDebit'>
+    <sequence>
+     <element name='PayByDirectDebitRequest_1' nillable='true' type='ns3:PayByDirectDebitRequest'/>
+    </sequence>
+   </complexType>
+   <complexType name='payByDirectDebitResponse'>
+    <sequence>
+     <element name='result' nillable='true' type='ns3:PayByDirectDebitResponse'/>
+    </sequence>
+   </complexType>
+   <complexType name='performCreditCheck'>
+    <sequence>
+     <element name='CreditCheckRequest_1' nillable='true' type='ns3:CreditCheckRequest'/>
+    </sequence>
+   </complexType>
+   <complexType name='performCreditCheckResponse'>
+    <sequence>
+     <element name='result' nillable='true' type='ns3:CreditCheckResponse'/>
+    </sequence>
+   </complexType>
+   <element name='chargeBySpecialDebit' type='tns:chargeBySpecialDebit'/>
+   <element name='chargeBySpecialDebitResponse' type='tns:chargeBySpecialDebitResponse'/>
+   <element name='chargeToBill' type='tns:chargeToBill'/>
+   <element name='chargeToBillResponse' type='tns:chargeToBillResponse'/>
+   <element name='getSessionKey' type='tns:getSessionKey'/>
+   <element name='getSessionKeyResponse' type='tns:getSessionKeyResponse'/>
+   <element name='payByCard' type='tns:payByCard'/>
+   <element name='payByCardResponse' type='tns:payByCardResponse'/>
+   <element name='payByCash' type='tns:payByCash'/>
+   <element name='payByCashResponse' type='tns:payByCashResponse'/>
+   <element name='payByDirectDebit' type='tns:payByDirectDebit'/>
+   <element name='payByDirectDebitResponse' type='tns:payByDirectDebitResponse'/>
+   <element name='performCreditCheck' type='tns:performCreditCheck'/>
+   <element name='performCreditCheckResponse' type='tns:performCreditCheckResponse'/>
+  </schema>
+ </types>
+ <message name='CGWebServiceInterface_chargeToBillResponse' xmlns='http://schemas.xmlsoap.org/wsdl/'>
+  <part element='ns1:chargeToBillResponse' name='result'></part>
+ </message>
+ <message name='CGWebServiceInterface_chargeBySpecialDebitResponse'>
+  <part element='ns1:chargeBySpecialDebitResponse' name='result'></part>
+ </message>
+ <message name='CGWebServiceInterface_payByCard'>
+  <part element='ns1:payByCard' name='parameters'></part>
+ </message>
+ <message name='CGWebServiceInterface_performCreditCheckResponse'>
+  <part element='ns1:performCreditCheckResponse' name='result'></part>
+ </message>
+ <message name='CGWebServiceInterface_payByCash'>
+  <part element='ns1:payByCash' name='parameters'></part>
+ </message>
+ <message name='CGWebServiceInterface_payByDirectDebit'>
+  <part element='ns1:payByDirectDebit' name='parameters'></part>
+ </message>
+ <message name='CGWebServiceInterface_chargeToBill'>
+  <part element='ns1:chargeToBill' name='parameters'></part>
+ </message>
+ <message name='CGWebServiceInterface_payByDirectDebitResponse'>
+  <part element='ns1:payByDirectDebitResponse' name='result'></part>
+ </message>
+ <message name='CGWebServiceInterface_chargeBySpecialDebit'>
+  <part element='ns1:chargeBySpecialDebit' name='parameters'></part>
+ </message>
+ <message name='CGWebServiceInterface_getSessionKey'>
+  <part element='ns1:getSessionKey' name='parameters'></part>
+ </message>
+ <message name='CGWebServiceInterface_payByCashResponse'>
+  <part element='ns1:payByCashResponse' name='result'></part>
+ </message>
+ <message name='CGWebServiceInterface_getSessionKeyResponse'>
+  <part element='ns1:getSessionKeyResponse' name='result'></part>
+ </message>
+ <message name='CGWebServiceInterface_performCreditCheck'>
+  <part element='ns1:performCreditCheck' name='parameters'></part>
+ </message>
+ <message name='CGWebServiceInterface_payByCardResponse'>
+  <part element='ns1:payByCardResponse' name='result'></part>
+ </message>
+ <portType name='CGWebServiceInterface'>
+  <operation name='chargeBySpecialDebit'>
+   <input message='tns:CGWebServiceInterface_chargeBySpecialDebit'></input>
+   <output message='tns:CGWebServiceInterface_chargeBySpecialDebitResponse'></output>
+  </operation>
+  <operation name='chargeToBill'>
+   <input message='tns:CGWebServiceInterface_chargeToBill'></input>
+   <output message='tns:CGWebServiceInterface_chargeToBillResponse'></output>
+  </operation>
+  <operation name='getSessionKey'>
+   <input message='tns:CGWebServiceInterface_getSessionKey'></input>
+   <output message='tns:CGWebServiceInterface_getSessionKeyResponse'></output>
+  </operation>
+  <operation name='payByCard'>
+   <input message='tns:CGWebServiceInterface_payByCard'></input>
+   <output message='tns:CGWebServiceInterface_payByCardResponse'></output>
+  </operation>
+  <operation name='payByCash'>
+   <input message='tns:CGWebServiceInterface_payByCash'></input>
+   <output message='tns:CGWebServiceInterface_payByCashResponse'></output>
+  </operation>
+  <operation name='payByDirectDebit'>
+   <input message='tns:CGWebServiceInterface_payByDirectDebit'></input>
+   <output message='tns:CGWebServiceInterface_payByDirectDebitResponse'></output>
+  </operation>
+  <operation name='performCreditCheck'>
+   <input message='tns:CGWebServiceInterface_performCreditCheck'></input>
+   <output message='tns:CGWebServiceInterface_performCreditCheckResponse'></output>
+  </operation>
+ </portType>
+ <binding name='CGWebServiceInterfaceBinding' type='tns:CGWebServiceInterface'>
+  <soap:binding style='document' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='chargeBySpecialDebit'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='chargeToBill'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='getSessionKey'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='payByCard'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='payByCash'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='payByDirectDebit'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='performCreditCheck'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='CGWebService'>
+  <port binding='tns:CGWebServiceInterfaceBinding' name='CGWebServiceInterfacePort'>
+   <soap:address location='http://172.26.36.50:8989/CGWebService'/>
+  </port>
+ </service>
+</definitions>
+ 
